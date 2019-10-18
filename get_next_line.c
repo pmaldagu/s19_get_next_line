@@ -6,7 +6,7 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 13:36:47 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/10/18 15:45:38 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/10/18 18:09:38 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@ char *ft_firstcall(int fd)
 	return (tmp);
 }	
 
-int ft_linesize(char file)
+int ft_linesize(static char *file)
 {
 	int i;
 
 	i = 0;
-	while (buf[i] != '\n' && buf[i] != '\0')
+	while (file[i] != '\n' && file[i] != '\0')
 	{
 		i++;
 	}
 	return (i)
 }
 
-char *ft_linemal(char file)
+char *ft_linemal(static char *file)
 {
 	int i;
 	char *mal;
@@ -40,9 +40,9 @@ char *ft_linemal(char file)
 	i = 0;
 	if ((mal = malloc(sizeof(char) * (ft_linesize(file) + 1))) != NULL)
 	{
-		while (abuf[i] != '\n' && abuf != '\0')
+		while (file[i] != '\n' && file[i] != '\0')
 		{
-			mal[i] = abuf[i];
+			mal[i] = file[i];
 			i++;
 		}
 		mal[i] = '\0';
@@ -51,7 +51,34 @@ char *ft_linemal(char file)
 	return (NULL);
 }
 
-char *
+char *ft_newstc(static char *file)
+{
+	int i;
+	int j;
+	char *tmp;
+
+	i = 0;
+	j = 0;
+	while (file[i] != '\0')
+		i++;
+	while (file[j] != '\n')
+		j++;
+	if ((tmp = malloc(sizeof(char) * (i + j))) != NULL)
+	{
+		j = j + 2;
+		i = 0;
+		while (file[j] != '\0')
+		{
+			tmp[i] = file[j];
+			i++;
+			j++;
+		}
+		tmp[i] = '\0';
+		return (tmp);
+	}
+	return (NULL)
+}
+
 int	get_next_line(int fd, char **line)
 {
 	int i;
@@ -65,4 +92,9 @@ int	get_next_line(int fd, char **line)
 	else
 	{
 		*line = ft_linemal(file);
+		file = ft_newstc(file);
+	}
+	return (1);
+}
+
 
