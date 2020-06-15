@@ -2,21 +2,26 @@
 
 19 Coding School project
 
-"This project is inspired by the world-famous eponymous 90’s game, which
-was the first FPS ever. It will enable you to explore ray-casting. Your goal will be to
-make a dynamic view inside a maze, in which you’ll have to find your way."
+"The aim of this project is to make you code a function that returns a line
+ending with a newline, read from a file descriptor."
 
 ## Status
 
-### Retry
+### Success
+```diff
++ 107%
+```
+
+Moulinette: 
+```diff
++ 100%
+```
+```diff
++ basic_tests: GNL OK
+- bonus_tests: GNL KO
+```
 
 ### Updates
 
-- [x] correction
-- [x] optimisation
-- [ ] for linux
-
-## Ressources
-
-- [Lode's Computer Graphics Tutorial](https://lodev.org/cgtutor/raycasting.html)
-- [MiniLibX](https://harm-smits.github.io/42docs/libs/minilibx)
+- [ ] correction
+- [ ] optimisation
