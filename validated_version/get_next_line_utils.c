@@ -6,15 +6,15 @@
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/08 17:27:16 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/11/11 18:51:55 by pmaldagu         ###   ########.fr       */
+/*   Updated: 2019/11/12 13:53:40 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
@@ -22,9 +22,9 @@ size_t ft_strlen(const char *s)
 	return (i);
 }
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (s == NULL)
@@ -38,10 +38,10 @@ char *ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-char *ft_calloc(size_t count, size_t size)
+char	*ft_calloc(size_t count, size_t size)
 {
-	size_t i;
-	char *calloc;
+	size_t	i;
+	char	*calloc;
 
 	i = 0;
 	if ((calloc = malloc(size * count)))
@@ -56,15 +56,15 @@ char *ft_calloc(size_t count, size_t size)
 	return (NULL);
 }
 
-char *ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
-	int i;
-	int j;
-	char *join;
+	int		i;
+	int		j;
+	char	*join;
 
 	i = 0;
 	j = 0;
-	if((join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
+	if ((join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
 	{
 		while (s1[i] != '\0')
 		{
@@ -79,15 +79,15 @@ char *ft_strjoin(const char *s1, const char *s2)
 	return (NULL);
 }
 
-char *ft_strdup(char *s)
+char	*ft_strdup(char *s)
 {
-	char *str;
-	int i;
+	char	*str;
+	int		i;
 
 	i = 0;
 	if (s == NULL)
-		return (ft_calloc(1,1));
-	if((str = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+		return (ft_calloc(1, 1));
+	if ((str = malloc(sizeof(char) * (ft_strlen(s) + 1))))
 	{
 		while (s[i] != '\0')
 		{
@@ -99,4 +99,3 @@ char *ft_strdup(char *s)
 	}
 	return (NULL);
 }
-

@@ -5,73 +5,65 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmaldagu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/24 15:05:34 by pmaldagu          #+#    #+#             */
-/*   Updated: 2019/11/07 16:21:15 by pmaldagu         ###   ########.fr       */
+/*   Created: 2019/11/08 17:27:16 by pmaldagu          #+#    #+#             */
+/*   Updated: 2019/11/12 16:55:01 by pmaldagu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	if (s == NULL)
-		return (0);
 	while (s[i] != '\0')
 		i++;
 	return (i);
 }
 
-char 	*ft_strdup(char *s)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
-	size_t len;
-	char *rest;
+	int		i;
 
 	i = 0;
-	len = 0;
-	while (s[len] != '\n' && s[len] != '\0')
-		len++;
-	if ((rest = malloc(sizeof(char) * len + 1)) != NULL)
-	{
-		while (i < len)
-		{
-			rest[i] = s[i];
-			i++;
-		}
-		rest[i] = '\0';
-		return (rest);
-	}
-	return (NULL);
-}
-
-
-char 	*ft_strchr(const char *s)
-{
-	int i;
-
-	i = 0;
+	if (s == NULL)
+		return (NULL);
 	while (s[i] != '\0')
 	{
-		if (s[i] == '\n')
+		if (s[i] == c)
 			return (&((char *)s)[i + 1]);
 		i++;
 	}
 	return (NULL);
 }
 
-char 	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_calloc(size_t count, size_t size)
 {
-	int i;
-	int j;
-	char *join;
+	size_t	i;
+	char	*calloc;
+
+	i = 0;
+	if ((calloc = malloc(size * count)))
+	{
+		while (i < count * size)
+		{
+			calloc[i] = '\0';
+			i++;
+		}
+		return (calloc);
+	}
+	return (NULL);
+}
+
+char	*ft_strjoin(const char *s1, const char *s2)
+{
+	int		i;
+	int		j;
+	char	*join;
 
 	i = 0;
 	j = 0;
-	if (s2 == NULL)
-		return (ft_strdup(""));
 	if ((join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
 	{
 		while (s1[i] != '\0')
@@ -87,23 +79,23 @@ char 	*ft_strjoin(const char *s1, const char *s2)
 	return (NULL);
 }
 
-char	*ft_strcpy(char *dst, char *src)
+char	*ft_strdup(char *s)
 {
-		int i;
+	char	*str;
+	int		i;
 
-		i = 0;
-		if (!dst || !src)
-			return (NULL);
-		while (src[i] != '\0')
+	i = 0;
+	if (s == NULL)
+		return (ft_calloc(1, 1));
+	if ((str = malloc(sizeof(char) * (ft_strlen(s) + 1))))
+	{
+		while (s[i] != '\0')
 		{
-			dst[i] = src[i];
+			str[i] = s[i];
 			i++;
 		}
-		while (dst[i] != '\0')
-		{
-			dst[i] = '\0';
-			i++;
-		}
-		dst[i] = '\0';
-		return (dst);
+		str[i] = '\0';
+		return (str);
+	}
+	return (NULL);
 }
