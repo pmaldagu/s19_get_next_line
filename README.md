@@ -14,7 +14,7 @@ ending with a newline, read from a file descriptor."
 
 Moulinette: 
 ```diff
-- 100%
++ 100%
 ```
 ```diff
 + basic_tests: GNL OK
