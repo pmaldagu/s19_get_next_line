@@ -11,7 +11,7 @@ Success: 107%
 
 ## References
 - [File descriptor](https://en.wikipedia.org/wiki/File_descriptor)
-- RFTM
+- RFTM:
 ```
 man 2 read
 ```
