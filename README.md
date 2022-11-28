@@ -7,21 +7,11 @@ ending with a newline, read from a file descriptor."
 
 ## Status
 
-### Success
-```diff
-+ 107%
-```
+Success: 107%
 
-Moulinette: 
-```diff
-+ 100%
-```
-```diff
-+ basic_tests: GNL OK
-- bonus_tests: GNL KO
-```
+### References
 
-### Updates
-
-- [ ] correction
-- [ ] optimisation
+```
+man 2 read
+```
+[File descriptor](https://en.wikipedia.org/wiki/File_descriptor)
