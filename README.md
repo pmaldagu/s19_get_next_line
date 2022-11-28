@@ -9,7 +9,7 @@ ending with a newline, read from a file descriptor."
 
 Success: 107%
 
-### References
+## References
 
 ```
 man 2 read
