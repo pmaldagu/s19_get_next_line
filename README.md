@@ -1,4 +1,4 @@
-# Get Next Line
+# get_next_line
 
 19 Coding School project (42 Network)
 
