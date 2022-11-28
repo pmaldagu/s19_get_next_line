@@ -10,8 +10,8 @@ ending with a newline, read from a file descriptor."
 Success: 107%
 
 ## References
-
+- [File descriptor](https://en.wikipedia.org/wiki/File_descriptor)
+- RFTM
 ```
 man 2 read
 ```
-[File descriptor](https://en.wikipedia.org/wiki/File_descriptor)
